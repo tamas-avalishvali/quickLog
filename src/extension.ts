@@ -6,25 +6,29 @@ export function activate(context: vscode.ExtensionContext) {
     if (!editor || event.document !== editor.document) return;
 
     const changes = event.contentChanges;
-    if (!changes.length) return;
+    if (changes.length !== 1) return;
 
-    const lastChange = changes[0];
-    const prevLineNum = lastChange.range.start.line;
-    const lineText = editor.document.lineAt(prevLineNum).text;
+    const change = changes[0];
+    if (
+      (change.text !== "\n" && change.text !== "\r\n") ||
+      !change.range.isEmpty
+    )
+      return;
+
+    const lineNum = change.range.start.line;
+    const lineText = editor.document.lineAt(lineNum).text;
 
     const match = lineText.match(/(.+)\.glog$/);
     if (match) {
       const capturedText = match[1].trim();
-      const range = new vscode.Range(
-        prevLineNum,
-        0,
-        prevLineNum,
-        lineText.length
-      );
+      const range = new vscode.Range(lineNum, 0, lineNum, lineText.length);
 
-      editor.edit((editBuilder) => {
-        editBuilder.replace(range, `console.log(${capturedText});`);
-      });
+      editor.edit(
+        (editBuilder) => {
+          editBuilder.replace(range, `console.log(${capturedText});`);
+        },
+        { undoStopBefore: true, undoStopAfter: true }
+      );
     }
   });
 
