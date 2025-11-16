@@ -4,8 +4,8 @@ Insert `console.log` quickly in JavaScript or TypeScript.
 
 ## How it works
 
-Type any text followed by `.glog` in a JS/TS file:
+Type any text followed by `glog` with a space in a JS/TS file:
 
 ```ts
-"d".glog
-myVar.glog
+"d" glog
+myVar glog
