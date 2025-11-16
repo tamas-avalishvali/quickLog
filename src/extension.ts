@@ -6,6 +6,7 @@ export function activate(context: vscode.ExtensionContext) {
     blog: "blue",
     rlog: "red",
     wlog: "white",
+    log: "white",
     plog: "purple",
     slog: "silver",
     alog: "aqua",
@@ -45,15 +46,20 @@ export function activate(context: vscode.ExtensionContext) {
     const capturedText = match[2].trim();
     const logType = match[3];
     const color = logColors[logType] || "white";
+    const isString = !!match[1]; // Check if opening quote exists (implies closed string)
+
+    let logStatement;
+    if (isString) {
+      logStatement = `console.log("%c🚩${capturedText} result is →", "color:${color}"); `;
+    } else {
+      logStatement = `console.log("%c🚩${capturedText} result is →", "color:${color}", ${capturedText}); `;
+    }
 
     const range = new vscode.Range(lineNum, 0, lineNum, lineText.length);
 
     editor.edit(
       (editBuilder) => {
-        editBuilder.replace(
-          range,
-          `console.log("%c${capturedText}", "color:${color}"); `
-        );
+        editBuilder.replace(range, logStatement);
       },
       { undoStopBefore: true, undoStopAfter: true }
     );
