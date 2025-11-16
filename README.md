@@ -1,29 +1,46 @@
 # Quick Log Plus
 
-Quickly insert `console.log` statements in JavaScript or TypeScript with colored output for easier debugging.
-
----
+Insert colored `console.log` statements fast in JavaScript and TypeScript.
 
 ## Features
 
-- Automatically replaces a typed keyword with a `console.log`.
-- Supports colored output in the console:
-  - `glog` → green text  
-  - `blog` → blue text  
-  - `rlog` → red text  
-  - `wlog` → white text  
-- Works with both strings and variables.
-- Triggered by typing a space after the keyword (no need to press Enter).
-- Saves time while debugging and makes logs more readable.
+- Replaces a keyword with a styled `console.log`.
+- Adds color to console output.
+- Works with strings and variables.
+- Runs on space trigger.
+- Speeds up debugging.
 
----
+## Color Keywords
+
+| Keyword | Color        |
+|--------|--------------|
+| glog   | green        |
+| blog   | blue         |
+| rlog   | red          |
+| wlog   | white        |
+| plog   | purple       |
+| slog   | silver       |
+| alog   | aqua         |
+| hlog   | deeppink     |
+| jlog   | yellow       |
+| ilog   | indigo       |
+| ulog   | ultramarine  |
+| tlog   | teal         |
+| klog   | khaki        |
+| nlog   | navy         |
+| elog   | emerald      |
+| xlog   | coral        |
+| ylog   | gold         |
+| zlog   | cyan         |
+| qlog   | crimson      |
 
 ## How it works
 
-Type any text followed by one of the log keywords and a **space** in a JS/TS file:
+Type a value and then a keyword with a space:
 
 ```ts
 "d" glog
 myVar blog
 error rlog
 info wlog
+status ylog
