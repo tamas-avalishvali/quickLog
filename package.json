@@ -4,7 +4,7 @@
   "publisher": "QuickTools",
   "description": "Insert console.log quickly in JavaScript or React projects.",
   "icon": "thumbnail.jpg",
-  "version": "0.8.0",
+  "version": "0.9.0",
   "engines": {
     "vscode": "^1.80.0"
   },
