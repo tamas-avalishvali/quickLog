@@ -9,16 +9,14 @@ export function activate(context: vscode.ExtensionContext) {
     if (changes.length !== 1) return;
 
     const change = changes[0];
-    if (
-      (change.text !== "\n" && change.text !== "\r\n") ||
-      !change.range.isEmpty
-    )
-      return;
+    // Trigger on a space instead of Enter
+    if (change.text !== " " || !change.range.isEmpty) return;
 
     const lineNum = change.range.start.line;
     const lineText = editor.document.lineAt(lineNum).text;
 
-    const match = lineText.match(/(['"`]?)(.+?)\1?\.glog$/);
+    // Match optional quotes, text, then space, then 'glog' at the end
+    const match = lineText.match(/(['"`]?)(.+?)\1?\s+glog\s$/);
     if (!match) return;
 
     const capturedText = match[2].trim();
@@ -26,7 +24,7 @@ export function activate(context: vscode.ExtensionContext) {
 
     editor.edit(
       (editBuilder) => {
-        editBuilder.replace(range, `console.log(${capturedText});`);
+        editBuilder.replace(range, `console.log(${capturedText}); `);
       },
       { undoStopBefore: true, undoStopAfter: true }
     );
