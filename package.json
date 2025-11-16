@@ -3,6 +3,7 @@
   "displayName": "Quick Log Plus",
   "publisher": "QuickTools",
   "description": "Insert console.log quickly in JavaScript or React projects.",
+  "icon": "thumbnail.jpg",
   "version": "0.2.0",
   "engines": {
     "vscode": "^1.80.0"
