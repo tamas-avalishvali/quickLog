@@ -1,7 +1,7 @@
 # Quick Log Plus
 
 Insert colored `console.log` statements fast in JavaScript and TypeScript.
-![Demo](https://raw.githubusercontent.com/tamas-avalishvali/quickLog/main/assets/dtringLog.gif)
+![Demo](https://raw.githubusercontent.com/tamas-avalishvali/quickLog/main/assets/dtringlog.gif)
 ## Features
 
 - Replaces a keyword with a styled `console.log`.
