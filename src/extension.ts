@@ -1,8 +1,6 @@
 import * as vscode from "vscode";
 
 export function activate(context: vscode.ExtensionContext) {
-<<<<<<< HEAD
-=======
   const logColors: Record<string, string> = {
     glog: "green",
     blog: "blue",
@@ -26,37 +24,11 @@ export function activate(context: vscode.ExtensionContext) {
     qlog: "crimson",
   };
 
->>>>>>> f4df3be7d4366b98aa3273bdfb4a19a2279c3923
   const disposable = vscode.workspace.onDidChangeTextDocument((event) => {
     const editor = vscode.window.activeTextEditor;
     if (!editor || event.document !== editor.document) return;
 
     const changes = event.contentChanges;
-<<<<<<< HEAD
-    if (!changes.length) return;
-
-    const lastChange = changes[0];
-    if (lastChange.text !== "\n") return;
-
-    const lineNum = lastChange.range.start.line;
-    if (lineNum === 0) return;
-
-    const prevLine = editor.document.lineAt(lineNum - 1).text;
-    const match = prevLine.match(/"(.*)"\.log$/);
-    if (match) {
-      const capturedText = match[1];
-      const range = new vscode.Range(
-        lineNum - 1,
-        0,
-        lineNum - 1,
-        prevLine.length
-      );
-
-      editor.edit((editBuilder) => {
-        editBuilder.replace(range, `console.log("${capturedText}");`);
-      });
-    }
-=======
     if (changes.length !== 1) return;
 
     const change = changes[0];
@@ -78,9 +50,9 @@ export function activate(context: vscode.ExtensionContext) {
 
     let logStatement;
     if (isString) {
-      logStatement = `console.log("%c🚩${capturedText} result is →", "color:${color}"); `;
+      logStatement = `console.log('%c🚩${capturedText} result is →', 'color:${color}'); `;
     } else {
-      logStatement = `console.log("%c🚩${capturedText} result is →", "color:${color}", ${capturedText}); `;
+      logStatement = `console.log('%c🚩${capturedText} result is →', 'color:${color}', ${capturedText}); `;
     }
 
     const range = new vscode.Range(lineNum, 0, lineNum, lineText.length);
@@ -91,10 +63,9 @@ export function activate(context: vscode.ExtensionContext) {
       },
       { undoStopBefore: true, undoStopAfter: true }
     );
->>>>>>> f4df3be7d4366b98aa3273bdfb4a19a2279c3923
   });
 
   context.subscriptions.push(disposable);
 }
 
-export function deactivate() {}
+export function deactivate() { }

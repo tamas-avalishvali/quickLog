@@ -1,18 +1,3 @@
-<<<<<<< HEAD
-# Quick Log
-
-Insert console.log quickly in JavaScript or React projects.
-
-## Features
-
-- Add `console.log` with a shortcut (Ctrl+Alt+L)
-- Works in JavaScript and React files
-
-## Usage
-
-1. Open a JS/TS file.
-2. Press `Ctrl+Alt+L` to insert a log.
-=======
 # Quick Log Plus
 
 Insert colored `console.log` statements fast in JavaScript and TypeScript.
@@ -60,4 +45,3 @@ myVar blog
 error rlog
 info wlog
 status ylog
->>>>>>> f4df3be7d4366b98aa3273bdfb4a19a2279c3923
