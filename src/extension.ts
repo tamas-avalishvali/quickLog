@@ -6,7 +6,7 @@ export function activate(context: vscode.ExtensionContext) {
     blog: "blue",
     rlog: "red",
     wlog: "white",
-    log: "white",
+    log: "black",
     plog: "purple",
     slog: "silver",
     alog: "aqua",
