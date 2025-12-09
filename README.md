@@ -57,4 +57,5 @@ Insert colored `console.log` statements fast in JavaScript and TypeScript.
 2. Press the console key.
 3. **Add a space** at the end to trigger the log.
 
-> ⚠️ **Important:** Include a **space** at the end, and press **no key other than space**.
+> [!WARNING]
+> **Important:** Make sure to include a space at the end of the log, and do not press any key other than the space.
