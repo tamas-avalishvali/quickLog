@@ -2,37 +2,147 @@
   "name": "quick-log-tools",
   "displayName": "Quick Log Plus",
   "publisher": "QuickTools",
-  "description": "Insert console.log quickly in JavaScript or React projects.",
+  "description": "Insert smart, colorful, context-aware log statements in JavaScript, TypeScript, Python, Go, PHP, C# and Java — with one-click cleanup.",
   "icon": "thumbnail.jpg",
   "version": "0.35.0",
   "engines": {
     "vscode": "^1.80.0"
   },
-  "repository": "https://github.com/tamas-avalishvali/quickLog",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tamas-avalishvali/quickLog"
+  },
   "categories": [
+    "Programming Languages",
+    "Snippets",
     "Other"
+  ],
+  "keywords": [
+    "console.log",
+    "log",
+    "logging",
+    "logger",
+    "debug",
+    "debugging",
+    "turbo console log",
+    "javascript",
+    "typescript",
+    "python",
+    "go",
+    "php",
+    "csharp",
+    "java"
   ],
   "activationEvents": [
     "onLanguage:javascript",
     "onLanguage:typescript",
     "onLanguage:javascriptreact",
-    "onLanguage:typescriptreact"
+    "onLanguage:typescriptreact",
+    "onLanguage:python",
+    "onLanguage:go",
+    "onLanguage:php",
+    "onLanguage:csharp",
+    "onLanguage:java"
   ],
   "main": "./dist/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "quick-log.addLog",
-        "title": "Insert Quick Log"
+        "command": "quickLog.insertLog",
+        "title": "Quick Log: Insert Log Statement"
+      },
+      {
+        "command": "quickLog.commentAllLogs",
+        "title": "Quick Log: Comment All Log Statements"
+      },
+      {
+        "command": "quickLog.uncommentAllLogs",
+        "title": "Quick Log: Uncomment All Log Statements"
+      },
+      {
+        "command": "quickLog.deleteAllLogs",
+        "title": "Quick Log: Delete All Log Statements"
       }
     ],
     "keybindings": [
       {
-        "command": "quick-log.addLog",
+        "command": "quickLog.insertLog",
         "key": "ctrl+alt+l",
         "when": "editorTextFocus"
       }
-    ]
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "submenu": "quickLog.submenu",
+          "group": "1_modification"
+        }
+      ],
+      "quickLog.submenu": [
+        {
+          "command": "quickLog.insertLog",
+          "group": "1_insert"
+        },
+        {
+          "command": "quickLog.commentAllLogs",
+          "group": "2_manage"
+        },
+        {
+          "command": "quickLog.uncommentAllLogs",
+          "group": "2_manage"
+        },
+        {
+          "command": "quickLog.deleteAllLogs",
+          "group": "2_manage"
+        }
+      ]
+    },
+    "submenus": [
+      {
+        "id": "quickLog.submenu",
+        "label": "Quick Log"
+      }
+    ],
+    "configuration": {
+      "title": "Quick Log Plus",
+      "properties": {
+        "quickLog.marker": {
+          "type": "string",
+          "default": "🚩",
+          "description": "The emoji or text marker prefixed to every generated log statement. Also used to detect quick-log lines for the comment/uncomment/delete-all commands."
+        },
+        "quickLog.showFileAndLine": {
+          "type": "boolean",
+          "default": true,
+          "description": "Include the file name and line number in generated log statements."
+        },
+        "quickLog.showFunctionName": {
+          "type": "boolean",
+          "default": true,
+          "description": "Include the name of the nearest enclosing function or method in generated log statements."
+        },
+        "quickLog.autoColor": {
+          "type": "boolean",
+          "default": true,
+          "description": "Automatically pick a console color based on the variable name (JavaScript/TypeScript only) when inserting via command or context menu."
+        },
+        "quickLog.semicolons": {
+          "type": "boolean",
+          "default": true,
+          "description": "Add a trailing semicolon to generated JavaScript/TypeScript log statements."
+        },
+        "quickLog.quoteStyle": {
+          "type": "string",
+          "enum": [
+            "single",
+            "double",
+            "backtick"
+          ],
+          "default": "single",
+          "description": "Quote character used in generated JavaScript/TypeScript log statements."
+        }
+      }
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run package",
