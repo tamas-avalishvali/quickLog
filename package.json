@@ -4,7 +4,7 @@
   "publisher": "QuickTools",
   "description": "Insert smart, colorful, context-aware log statements in JavaScript, TypeScript, Python, Go, PHP, C# and Java — with one-click cleanup.",
   "icon": "thumbnail.jpg",
-  "version": "0.36.1",
+  "version": "0.37.1",
   "engines": {
     "vscode": "^1.80.0"
   },
