@@ -5,6 +5,7 @@
   "description": "Insert smart, colorful, context-aware log statements in JavaScript, TypeScript, Python, Go, PHP, C# and Java — with one-click cleanup.",
   "icon": "thumbnail.jpg",
   "version": "0.37.1",
+  "license": "MIT",
   "engines": {
     "vscode": "^1.80.0"
   },
@@ -12,9 +13,18 @@
     "type": "git",
     "url": "https://github.com/tamas-avalishvali/quickLog"
   },
+  "bugs": {
+    "url": "https://github.com/tamas-avalishvali/quickLog/issues"
+  },
+  "homepage": "https://github.com/tamas-avalishvali/quickLog#readme",
+  "galleryBanner": {
+    "color": "#1e1e1e",
+    "theme": "dark"
+  },
   "categories": [
     "Programming Languages",
     "Snippets",
+    "Debuggers",
     "Other"
   ],
   "keywords": [
@@ -24,6 +34,12 @@
     "logger",
     "debug",
     "debugging",
+    "print debug",
+    "debug print",
+    "log statement",
+    "log helper",
+    "auto log",
+    "insert log",
     "turbo console log",
     "javascript",
     "typescript",

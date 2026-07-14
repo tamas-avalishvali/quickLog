@@ -1,8 +1,17 @@
 # Quick Log Plus
 
+[![Version](https://img.shields.io/visual-studio-marketplace/v/QuickTools.quick-log-tools?color=blue&label=marketplace)](https://marketplace.visualstudio.com/items?itemName=QuickTools.quick-log-tools)
+[![Installs](https://img.shields.io/visual-studio-marketplace/i/QuickTools.quick-log-tools?color=success)](https://marketplace.visualstudio.com/items?itemName=QuickTools.quick-log-tools)
+[![Rating](https://img.shields.io/visual-studio-marketplace/r/QuickTools.quick-log-tools?color=yellow)](https://marketplace.visualstudio.com/items?itemName=QuickTools.quick-log-tools&ssr=false#review-details)
+[![License: MIT](https://img.shields.io/badge/license-MIT-lightgrey.svg)](LICENSE)
+
 Insert smart, colorful, context-aware log statements in **JavaScript, TypeScript, Python, Go, PHP, C# and Java** — and clean them all up again with a single command.
 
 ![Demo](https://github.com/tamas-avalishvali/quickLog/raw/main/stringlog.gif)
+
+## Why Quick Log Plus?
+
+Typing out `console.log("myVar:", myVar)` by hand, every time, in every language, adds up. Quick Log Plus turns that into one keystroke or shortcut, and — unlike a plain snippet — it knows the file, line, and enclosing function you're in, colors output per variable automatically, and can strip every log statement back out again in one command when you're done debugging. One extension covers JS/TS, Python, Go, PHP, C#, and Java, so you don't need a different logging snippet per language.
 
 ## Features
 
