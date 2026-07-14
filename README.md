@@ -1,14 +1,8 @@
 # Quick Log Plus
 
-<<<<<<< HEAD
-Insert colored `console.log` statements fast in JavaScript and TypeScript.
-
-![Demo](https://github.com/tamas-avalishvali/quickLog/raw/main/stringlog.gif)
-=======
 Insert smart, colorful, context-aware log statements in **JavaScript, TypeScript, Python, Go, PHP, C# and Java** — and clean them all up again with a single command.
 
-![Demo](./assets/stringlog.gif)
->>>>>>> 827ca7b (Refactore codes)
+![Demo](https://github.com/tamas-avalishvali/quickLog/raw/main/stringlog.gif)
 
 ## Features
 
@@ -19,55 +13,6 @@ Insert smart, colorful, context-aware log statements in **JavaScript, TypeScript
 - 🧹 **One-click cleanup** — comment out, uncomment, or delete every quick-log statement in the current file.
 - ⚙️ **Fully configurable** — marker, quote style, semicolons, and which context details to show.
 
-<<<<<<< HEAD
----
-
-## Color Keywords
-
-| Keyword | Color       |
-|---------|------------|
-| glog    | green      |
-| blog    | blue       |
-| rlog    | red        |
-| wlog    | white      |
-| plog    | purple     |
-| slog    | silver     |
-| alog    | aqua       |
-| hlog    | deeppink   |
-| jlog    | yellow     |
-| ilog    | indigo     |
-| ulog    | ultramarine|
-| tlog    | teal       |
-| klog    | khaki      |
-| nlog    | navy       |
-| elog    | emerald    |
-| xlog    | coral      |
-| ylog    | gold       |
-| zlog    | cyan       |
-| qlog    | crimson    |
-
----
-
-## Samples
-
-| Input Example | Output              |
-|---------------|-------------------|
-| `msg glog `   | 🟢 msg result is → |
-| `msg blog `   | 🔵 msg result is → |
-| `msg rlog `   | 🔴 msg result is → |
-| `msg wlog `   | ⚪ msg result is → |
-
----
-
-## 🚀 How it works
-
-1. Type a value, then a keyword.
-2. Press the console key.
-3. **Add a space** at the end to trigger the log.
-
-> [!WARNING]
-> **Important:** Make sure to include a space at the end of the log, and do not press any key other than the space.
-=======
 ## Usage
 
 ### 1. Command / right-click (any supported language)
@@ -98,6 +43,9 @@ Type a value, then a color keyword, then a space:
 myVar blog
 error rlog
 ```
+
+> [!WARNING]
+> Make sure to include a space at the end of the log, and don't press any key other than the space — that's what triggers the insert.
 
 ### Cleanup commands
 
@@ -161,4 +109,3 @@ Available from the Command Palette or right-click → **Quick Log**:
 | `Quick Log: Comment All Log Statements`   | —            |
 | `Quick Log: Uncomment All Log Statements` | —            |
 | `Quick Log: Delete All Log Statements`    | —            |
->>>>>>> 827ca7b (Refactore codes)
