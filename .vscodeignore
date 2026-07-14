@@ -4,6 +4,7 @@ out/**
 node_modules/**
 src/**
 stringlog.gif
+.claude/**
 .gitignore
 .yarnrc
 webpack.config.js
